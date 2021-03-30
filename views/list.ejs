@@ -12,18 +12,18 @@
     <div class="box">
     
        <% for(ta of tasks){ %>
-        <div class="item">
+        <div class=" box">
             <input type="checkbox">
             <p><%=ta%></p>
         </div>
             
         <% } %>
         
-        <form class="item" action="/" method="POST">
-            <input type="text" name="task" placeholder="ADD TASK" autocomplete="off">
-            <button type="submit" name="button">+</button>
-        </form>
     </div>
+    <div class="box"><form class="item" action="/" method="POST">
+        <input type="text" name="task" placeholder="ADD TASK" autocomplete="off">
+        <button type="submit" name="button">+</button>
+    </form></div>
     
 </body>
 </html>

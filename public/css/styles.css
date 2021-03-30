@@ -12,8 +12,8 @@ h1 {
 
 .box {
   max-width: 400px;
-  margin: 50px auto;
-  background: #5f939a;
+  margin: 10px auto;
+  
   border-radius: 5px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
@@ -46,9 +46,9 @@ input[type="checkbox"] {
 
 p {
   margin: 0;
-  padding: 20px;
-  font-size: 20px;
-  font-weight: 200;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 450;
   color: #00204a;
 }
 
@@ -58,7 +58,7 @@ form {
 }
 
 button {
-  min-height: 50px;
+  min-height: 30px;
   width: 50px;
   border-radius: 50%;
   border-color: transparent;
