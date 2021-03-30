@@ -9,7 +9,14 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 app.get("/",function(req,res){
-    res.render("list.ejs",{tasks:items});
+    let date=new date();
+    let options={
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+    }
+    let day=date.toLocalDateString("en-US",options);
+    res.render("list.ejs",{currentDay:day,tasks:items});
 })
 
 app.post("/",function(req,res){
