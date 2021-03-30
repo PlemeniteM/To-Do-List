@@ -9,13 +9,13 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 app.get("/",function(req,res){
-    let date=new date();
+    let dat=new Date();
     let options={
         weekday:"long",
         day:"numeric",
         month:"long"
     }
-    let day=date.toLocalDateString("en-US",options);
+    let day=dat.toLocaleDateString("en-US",options);
     res.render("list.ejs",{currentDay:day,tasks:items});
 })
 
