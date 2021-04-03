@@ -26,20 +26,33 @@ const task3=new Task({
 })
 
 const defaultItems=[task1,task2,task3];
-Task.insertMany(defaultItems,function(err){
-    if(err)console.log(err);
-    else {
-        
-        mongoose.connection.close();
-        console.log("Success");}
-});
 
 
 app.get("/",function(req,res){
-    res.render("list.ejs",{currentDay:"Today"});
+    Task.find({},function(err,results){
+        if(results.length===0){
+            Task.insertMany(defaultItems,function(err){
+                if(err)console.log(err);
+                else {
+                    console.log("Success");}
+            });
+            res.redirect("/");
+        }
+        else
+         res.render("list.ejs",{currentDay:"Today",taks:results});
+    });
+   
+
+    
 })
 
 app.post("/",function(req,res){
+    const ina=req.body.task;
+    const nt=new Task({
+        task:ina
+    })
+    nt.save();
+    
     //items.push(req.body.task);
     res.redirect("/");
 })

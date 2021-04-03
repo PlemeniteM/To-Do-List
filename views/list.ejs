@@ -10,14 +10,13 @@
 <body>
     <div class="box" id="heading"><h1><%=currentDay%></h1></div>
     <div class="box">
-    
-       <% for(ta of tasks){ %>
+       
+        <%taks.forEach(function(ta){%>
         <div class=" box">
             <input type="checkbox">
-            <p><%=ta%></p>
+            <p><%=ta.task%></p>
         </div>
-            
-        <% } %>
+       <%})%>
         
     </div>
     <div class="box"><form class="item" action="/" method="POST">
