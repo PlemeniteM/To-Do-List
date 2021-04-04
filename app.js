@@ -48,7 +48,7 @@ app.get("/",function(req,res){
             res.redirect("/");
         }
         else
-         res.render("list.ejs",{currentDay:"Today",taks:results});
+         res.render("list.ejs",{listName:"Today",taks:results});
     });
 })
 
@@ -68,7 +68,7 @@ app.get("/:type",function(req,res){
             
         }
         else{
-            res.render("list.ejs",{currentDay:req.params.type,taks:results.items});
+            res.render("list.ejs",{listName:req.params.type,taks:results.items});
         }
     })
     

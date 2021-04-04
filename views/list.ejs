@@ -8,7 +8,7 @@
     <title>To-Do List</title>
 </head>
 <body>
-    <div class="box" id="heading"><h1><%=currentDay%></h1></div>
+    <div class="box" id="heading"><h1><%=listName%></h1></div>
     <div class="box">
        
         <%taks.forEach(function(ta){%>
@@ -17,7 +17,7 @@
                     <input value="<%= ta._id%>" name="check" type="checkbox" onclick="this.form.submit()">
                     <p><%=ta.task%></p>
                 </div>
-                <input type="hidden" name="li" value="<%=currentDay%>">
+                <input type="hidden" name="li" value="<%=listName%>">
             </form>
         
        <%})%>
@@ -25,7 +25,7 @@
     </div>
     <div class="box"><form class="item" action="/" method="POST">
         <input type="text" name="task" placeholder="ADD TASK" autocomplete="off">
-        <button type="submit" name="button" value="<%=currentDay%>">+</button>
+        <button type="submit" name="button" value="<%=listName%>">+</button>
     </form></div>
     
 </body>
