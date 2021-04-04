@@ -12,16 +12,20 @@
     <div class="box">
        
         <%taks.forEach(function(ta){%>
-        <div class=" box">
-            <input type="checkbox">
-            <p><%=ta.task%></p>
-        </div>
+            <form action="/delete" method="POST">
+                <div class=" box">
+                    <input value="<%= ta._id%>" name="check" type="checkbox" onclick="this.form.submit()">
+                    <p><%=ta.task%></p>
+                </div>
+                <input type="hidden" name="li" value="<%=currentDay%>">
+            </form>
+        
        <%})%>
         
     </div>
     <div class="box"><form class="item" action="/" method="POST">
         <input type="text" name="task" placeholder="ADD TASK" autocomplete="off">
-        <button type="submit" name="button">+</button>
+        <button type="submit" name="button" value="<%=currentDay%>">+</button>
     </form></div>
     
 </body>
