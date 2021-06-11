@@ -7,7 +7,7 @@ app.set('view engine','ejs');
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todoListDB",{useFindAndModify:false,useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect("mongodb+srv://kripke-admin:ChUnisceTKUx9eAZ@cluster0.qvfhc.mongodb.net/todoListDB",{useFindAndModify:false,useNewUrlParser:true,useUnifiedTopology:true});
 
 const itemSchema=new mongoose.Schema({
     task:String
@@ -142,8 +142,10 @@ app.post("/delete",function(req,res){
 
 
 
-
-
-app.listen(3000,function(){
-    console.log("Listening on 3000");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port,function(){
+    console.log("Listening on 8000");
 })
