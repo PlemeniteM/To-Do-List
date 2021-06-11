@@ -58,7 +58,7 @@ app.get("/:type",function(req,res){
         if(!results){
             const list=new List({
                 name:req.params.type,
-                items:defaultItems
+                items:null
             });
         
             list.save(function(err){
