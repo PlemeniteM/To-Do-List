@@ -16,13 +16,13 @@ const itemSchema=new mongoose.Schema({
 const Task=mongoose.model("Task",itemSchema);
 
 const task1=new Task({
-    task:"Buy food"
+    task:"Default Item1 "
 })
 const task2=new Task({
-    task:"Eat food"
+    task:"Use + to add a new item"
 })
 const task3=new Task({
-    task:"Store food"
+    task:"Click on checkbox to delete a item"
 })
 
 const defaultItems=[task1,task2,task3];
